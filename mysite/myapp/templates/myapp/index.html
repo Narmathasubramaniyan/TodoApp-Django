@@ -1,0 +1,27 @@
+{% extends "myapp/base.html" %}
+{% block body %}
+<div class="container">
+    <h1 class="text-center" style="color: black; margin-top: 5rem;">Task Details</h1>
+    <div class="row row-cols-1 row-cols-md-3 mt-5">
+        {% for task in task_list %}
+        <div class="col mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title">{{ task.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><span style="color: black;">Task Type:</span> {{ task.priority }}</p>
+                    <p class="card-text"><span style="color: black;">Assigned Category:</span> {{ task.category }}</p>
+                    <p class="card-text"><span style="color: black;">Estimated Time:</span> {{ task.estimate_time }}</p>
+                    <p class="card-text"><span style="color: black;">Deadline:</span> {{ task.end_date }}</p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-success">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
