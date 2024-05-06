@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from myapp import views
 
+
 urlpatterns = [
-    path('add/',views.add,name='add'),
     path('admin/', admin.site.urls),
-    path('',views.index,name='index')
+    path('', views.index, name='index'),
+    path('add/', views.add_task, name='add_task'),
+    path('delete/<int:id>/', views.delete_task, name='delete_task'),
 ]
+
+
